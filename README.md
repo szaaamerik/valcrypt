@@ -20,7 +20,7 @@ target_compile_options(YOUR_TARGET PRIVATE -msse4.1)
 ```
 
 > [!WARNING]
->It is highly recommended to disable optimizations for `valcrypt` to prevent the intrinsics from being optimized away.<br/>
+>Disable optimizations for `valcrypt` to prevent intrinsics from being optimized away.<br/>
 >Below are the CMake configurations to achieve this:
 
 MSVC:
