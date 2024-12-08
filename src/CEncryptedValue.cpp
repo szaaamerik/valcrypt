@@ -2,7 +2,7 @@
 // Created by merika on 12/8/2024.
 //
 
-#include "CEncryptedValue.hpp"
+#include "../include/CEncryptedValue.hpp"
 
 #include <intrin.h>
 
