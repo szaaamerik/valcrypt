@@ -87,11 +87,22 @@ namespace valcrypt {
             T Cipher(T value) const;
         #endif
 
+        VALCRYPT_FORCEINLINE static uint64_t MurmurHash3(const uint64_t seed) {
+            uint64_t key = seed;
+            key ^= (key >> 33);
+            key *= 0xff51afd7ed558ccd;
+            key ^= (key >> 33);
+            key *= 0xc4ceb9fe1a85ec53;
+            key ^= (key >> 33);
+            key |= 0x0101010101010101ull;
+            return key;
+        }
+
         VALCRYPT_FORCEINLINE static uint64_t GetRandomSeed() {
             std::random_device rd;
             std::mt19937 engine(rd());
             std::uniform_int_distribution<uint64_t> dist(0, std::numeric_limits<uint64_t>::max());
-            return dist(engine);
+            return MurmurHash3(dist(engine));
         }
 
     private:
