@@ -14,7 +14,8 @@ Inspiration: [a7t0fwa7/val_crypt](https://github.com/a7t0fwa7/val_crypt)
 ## Usage
 
 1. Download and include the valcrypt files in your project.
-2. For MinGW/GCC you might also need to ensure SSE4.1 intrins are enabled.
+2. If including `Windows.h`, please define `#NOMINMAX` right before it.
+3. For MinGW/GCC you might also need to ensure SSE4.1 intrins are enabled.
 ```cmake
 target_compile_options(YOUR_TARGET PRIVATE -msse4.1)
 ```
